@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ofonime Offong - Cloud Engineer & DevOps Specialist. AWS, Terraform, Kubernetes, CI/CD. View my projects and get in touch.">
+    <title>Ofonime Offong | Cloud Engineer & DevOps Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    :root {
+        --primary: #2563eb;
+        --secondary: #0f172a;
+        --accent: #f59e0b;
+        --text: #1e293b;
+        --text-light: #64748b;
+        --bg: #ffffff;
+        --bg-light: #f8fafc;
+        --border: #e2e8f0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--bg);
+    }
+    
+    /* Navigation */
+    nav {
+        background: var(--bg);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    
+    nav .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    nav .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+    
+    nav a:hover {
+        color: var(--primary);
+    }
+    
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        color: white;
+        padding: 6rem 2rem;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        opacity: 0.85;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 0.875rem 2rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    
+    .btn-primary {
+        background: white;
+        color: var(--primary);
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+    
+    .btn-secondary:hover {
+        background: white;
+        color: var(--primary);
+    }
+    
+    /* Container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+    
+    /* Section Headers */
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    /* Skills Section */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    
+    .skill-card {
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: 1rem;
+        border: 2px solid var(--border);
+        transition: all 0.3s;
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-color: var(--primary);
+    }
+    
+    .skill-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+    
+    .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .tag {
+        background: var(--bg);
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        color: var(--text);
+        border: 1px solid var(--border);
+    }
+    
+    /* Projects Section */
+    .projects-grid {
+        display: grid;
+        gap: 3rem;
+    }
+    
+    .project-card {
+        background: var(--bg);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s;
+        border: 2px solid var(--border);
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .project-header {
+        background: linear-gradient(135deg, var(--primary), #1e40af);
+        color: white;
+        padding: 2rem;
+    }
+    
+    .project-header h3 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-header p {
+        opacity: 0.9;
+        font-size: 1.05rem;
+    }
+    
+    .project-body {
+        padding: 2rem;
+    }
+    
+    .project-highlights {
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-highlights h4 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .project-highlights ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .project-highlights li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+    
+    .project-highlights li::before {
+        content: "✓";
+        color: var(--primary);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+    
+    .project-tech {
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-tech h4 {
+        color: var(--secondary);
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+    }
+    
+    .project-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    
+    .project-link:hover {
+        background: #1e40af;
+        transform: translateX(5px);
+    }
+    
+    .project-link.demo {
+        background: var(--accent);
+    }
+    
+    .project-link.demo:hover {
+        background: #d97706;
+    }
+    
+    /* About Section */
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+    
+    .about-text h3 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .about-text p {
+        margin-bottom: 1rem;
+        color: var(--text-light);
+        line-height: 1.8;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .stat-card {
+        background: var(--bg-light);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        text-align: center;
+        border: 2px solid var(--border);
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        display: block;
+    }
+    
+    .stat-label {
+        color: var(--text-light);
+        font-size: 0.95rem;
+    }
+    
+    /* Contact Section */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    
+    .contact-card {
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        border: 2px solid var(--border);
+        transition: all 0.3s;
+    }
+    
+    .contact-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+    }
+    
+    .contact-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-card h3 {
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-card a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .contact-card a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Footer */
+    footer {
+        background: var(--secondary);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    footer p {
+        opacity: 0.8;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.2rem;
+        }
+        
+        nav ul {
+            display: none;
+        }
+        
+        .about-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Ofonime Offong</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <h1>Ofonime Offong</h1>
+    <p class="subtitle">Cloud Engineer & DevOps Specialist</p>
+    <p>Building scalable, highly available cloud infrastructure on AWS. Specialized in Infrastructure as Code, container orchestration, and automated CI/CD pipelines.</p>
+    <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="https://github.com/Ofony-85" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="container">
+    <div class="section-header">
+        <h2>Technical Expertise</h2>
+        <p>Proven skills across cloud infrastructure, automation, and modern DevOps practices</p>
+    </div>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>☁️ Cloud Platforms</h3>
+            <div class="skill-tags">
+                <span class="tag">AWS EC2</span>
+                <span class="tag">VPC</span>
+                <span class="tag">ELB/ALB</span>
+                <span class="tag">RDS</span>
+                <span class="tag">EFS</span>
+                <span class="tag">S3</span>
+                <span class="tag">EKS</span>
+                <span class="tag">Auto Scaling</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <h3>🛠️ Infrastructure as Code</h3>
+            <div class="skill-tags">
+                <span class="tag">Terraform</span>
+                <span class="tag">Ansible</span>
+                <span class="tag">AWS CLI</span>
+                <span class="tag">Bash Scripting</span>
+                <span class="tag">CloudFormation</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <h3>🐳 Containerization</h3>
+            <div class="skill-tags">
+                <span class="tag">Docker</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">Amazon EKS</span>
+                <span class="tag">Container Registry</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <h3>🔄 CI/CD & Automation</h3>
+            <div class="skill-tags">
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">Jenkins</span>
+                <span class="tag">Git</span>
+                <span class="tag">Automated Deployment</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <h3>💻 Programming & Scripting</h3>
+            <div class="skill-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Bash</span>
+                <span class="tag">YAML</span>
+                <span class="tag">JSON</span>
+                <span class="tag">HCL</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <h3>🔒 Security & Monitoring</h3>
+            <div class="skill-tags">
+                <span class="tag">Security Groups</span>
+                <span class="tag">IAM</span>
+                <span class="tag">CloudWatch</span>
+                <span class="tag">VPC Design</span>
+                <span class="tag">Encryption</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="container">
+    <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p>Real-world cloud infrastructure implementations showcasing production-ready solutions</p>
+    </div>
+    <div class="projects-grid">
+        <!-- Project 1: Three-Tier Architecture -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>AWS Three-Tier Architecture with Terraform</h3>
+                <p>Production-grade infrastructure with high availability and auto-scaling</p>
+            </div>
+            <div class="project-body">
+                <div class="project-highlights">
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Deployed 45+ AWS resources using Infrastructure as Code</li>
+                        <li>Multi-AZ architecture across 2 availability zones for 99.9% uptime</li>
+                        <li>Automated scaling (1-2 instances) based on CPU metrics</li>
+                        <li>Secure 3-tier network design with public, private, and database subnets</li>
+                        <li>Encrypted RDS PostgreSQL with automated backups</li>
+                    </ul>
+                </div>
+                <div class="project-tech">
+                    <h4>Technologies:</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Terraform</span>
+                        <span class="tag">AWS VPC</span>
+                        <span class="tag">EC2</span>
+                        <span class="tag">RDS</span>
+                        <span class="tag">ALB</span>
+                        <span class="tag">Auto Scaling</span>
+                        <span class="tag">CloudWatch</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ofony-85/aws-three-tier-architecture" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                    <a href="http://myapp-dev-alb-444572301.us-east-1.elb.amazonaws.com/" target="_blank" class="project-link demo">
+                        Live Demo →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2: WordPress High Availability -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>High Availability WordPress on AWS</h3>
+                <p>Zero-downtime WordPress deployment with automatic failover</p>
+            </div>
+            <div class="project-body">
+                <div class="project-highlights">
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Achieved 99.9%+ uptime with multi-AZ deployment</li>
+                        <li>Auto-scaling (2-4 instances) for traffic handling</li>
+                        <li>Amazon EFS for shared storage across instances</li>
+                        <li>RDS MySQL with encryption and automated backups</li>
+                        <li>Sub-second failover time for instance failures</li>
+                    </ul>
+                </div>
+                <div class="project-tech">
+                    <h4>Technologies:</h4>
+                    <div class="skill-tags">
+                        <span class="tag">AWS CLI</span>
+                        <span class="tag">EC2</span>
+                        <span class="tag">ALB</span>
+                        <span class="tag">RDS</span>
+                        <span class="tag">EFS</span>
+                        <span class="tag">Auto Scaling</span>
+                        <span class="tag">WordPress</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ofony-85/aws-wordpress-ha" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                    <a href="http://wordpress-alb-543074365.us-east-1.elb.amazonaws.com" target="_blank" class="project-link demo">
+                        Live Demo →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: Load Balanced Web App -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>AWS Load-Balanced Web Application</h3>
+                <p>Automated deployment of multi-tier web application with Flask</p>
+            </div>
+            <div class="project-body">
+                <div class="project-highlights">
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>One-command deployment script for complete infrastructure</li>
+                        <li>3 EC2 instances across multiple availability zones</li>
+                        <li>Application Load Balancer with health checks</li>
+                        <li>Automated Flask + Nginx installation</li>
+                        <li>Real-time monitoring with custom health endpoints</li>
+                    </ul>
+                </div>
+                <div class="project-tech">
+                    <h4>Technologies:</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Bash Scripting</span>
+                        <span class="tag">AWS CLI</span>
+                        <span class="tag">Python Flask</span>
+                        <span class="tag">Nginx</span>
+                        <span class="tag">ALB</span>
+                        <span class="tag">EC2</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ofony-85/aws-load-balanced-webapp" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                    <a href="http://webapp-alb-1764231315-1467904260.us-east-1.elb.amazonaws.com" target="_blank" class="project-link demo">
+                        Live Demo →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4: DevOps Capstone -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Cloud DevOps Capstone Project</h3>
+                <p>End-to-end infrastructure with Ansible automation</p>
+            </div>
+            <div class="project-body">
+                <div class="project-highlights">
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Ansible playbooks for automated server configuration</li>
+                        <li>Multi-AZ deployment across us-east-1a and us-east-1b</li>
+                        <li>Comparison analysis: EC2 vs S3 static hosting</li>
+                        <li>Custom VPC with public and private subnets</li>
+                        <li>Security group hardening and least-privilege access</li>
+                    </ul>
+                </div>
+                <div class="project-tech">
+                    <h4>Technologies:</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Ansible</span>
+                        <span class="tag">AWS EC2</span>
+                        <span class="tag">S3</span>
+                        <span class="tag">VPC</span>
+                        <span class="tag">ALB</span>
+                        <span class="tag">Nginx</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ofony-85/cloud-devops-capstone-project" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 5: EKS WordPress CI/CD -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>WordPress on EKS with CI/CD Pipeline</h3>
+                <p>Kubernetes-orchestrated WordPress with automated deployment</p>
+            </div>
+            <div class="project-body">
+                <div class="project-highlights">
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Amazon EKS cluster for container orchestration</li>
+                        <li>GitHub Actions CI/CD pipeline for automated deployments</li>
+                        <li>Dockerized WordPress with custom configurations</li>
+                        <li>Kubernetes manifests for scalable deployments</li>
+                        <li>Infrastructure as Code approach with version control</li>
+                    </ul>
+                </div>
+                <div class="project-tech">
+                    <h4>Technologies:</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Amazon EKS</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">WordPress</span>
+                        <span class="tag">YAML</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ofony-85/eks-wordpress-cicd" target="_blank" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container">
+    <div class="section-header">
+        <h2>About Me</h2>
+        <p>Passionate about building reliable, scalable cloud infrastructure</p>
+    </div>
+    <div class="about-content">
+        <div class="about-text">
+            <h3>Cloud Engineer & DevOps Enthusiast</h3>
+            <p>I specialize in designing and implementing production-ready cloud infrastructure on AWS. With expertise in Infrastructure as Code, container orchestration, and CI/CD automation, I help organizations build scalable, highly available systems.</p>
+            <p>My approach combines deep technical knowledge with practical problem-solving skills. I'm passionate about automation, security best practices, and creating infrastructure that developers love to work with.</p>
+            <p>When I'm not building cloud infrastructure, I'm learning about emerging technologies, contributing to open-source projects, and sharing knowledge with the DevOps community.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Major Projects</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">45+</span>
+                <span class="stat-label">AWS Resources Managed</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Uptime Achieved</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Infrastructure as Code</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container">
+    <div class="section-header">
+        <h2>Let's Connect</h2>
+        <p>Interested in collaboration or have questions? Reach out!</p>
+    </div>
+    <div class="contact-grid">
+        <div class="contact-card">
+            <div class="contact-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/ofonime-offong-139322a3/" target="_blank">Connect with me</a>
+        </div>
+        <div class="contact-card">
+            <div class="contact-icon">🐙</div>
+            <h3>GitHub</h3>
+            <a href="https://github.com/Ofony-85" target="_blank">@Ofony-85</a>
+        </div>
+        <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <a href="mailto:ofonyme3@gmail.com">ofonyme3@gmail.com</a>
+        </div>
+        <div class="contact-card">
+            <div class="contact-icon">📱</div>
+            <h3>Phone</h3>
+            <a href="tel:+2348038854115">+234 803 885 4115</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Ofonime Offong. Built with passion for cloud engineering and DevOps.</p>
+    <p>All projects are open source and available on GitHub.</p>
+</footer>
+</body>
+</html>
