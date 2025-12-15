@@ -776,23 +776,277 @@
                 </div>
             </div>
             <!-- Project 7: Serverless Log Analytics Pipeline -->
-<div class="project-item">
-    <h3>Serverless Log Analytics Pipeline</h3>
-    <p>Event-driven serverless pipeline processing 100+ logs with AWS Lambda, DynamoDB, and real-time alerting</p>
-    <div class="project-metrics">
-        <span>📊 108 Logs Processed</span>
-        <span>⚡ 2.8s Processing Time</span>
-        <span>☁️ 21 AWS Resources</span>
-        <span>💰 $7/month Cost</span>
+
+<div class="project-card">
+    <h3 class="project-title">Serverless Log Analytics Pipeline</h3>
+    <p class="project-description">Event-driven serverless pipeline for real-time log processing and analytics using AWS Lambda, DynamoDB, and S3</p>
+    
+    <div class="project-section">
+        <h4>Key Achievements:</h4>
+        <ul class="achievements-list">
+            <li>Deployed 21 AWS resources using Infrastructure as Code (Terraform)</li>
+            <li>Processes 100+ logs in under 3 seconds with Lambda (Python 3.11)</li>
+            <li>DynamoDB with 2 Global Secondary Indexes for flexible querying</li>
+            <li>Real-time SNS email alerts detecting 42 critical ERROR logs</li>
+            <li>Event-driven S3 triggers with automatic log processing</li>
+            <li>Cost-optimized serverless architecture (~$7/month operation)</li>
+        </ul>
     </div>
-    <div class="tech-stack">
-        <span class="tech-badge">AWS Lambda</span>
-        <span class="tech-badge">DynamoDB</span>
-        <span class="tech-badge">Terraform</span>
-        <span class="tech-badge">Python</span>
+    
+    <div class="project-section">
+        <h4>Technologies:</h4>
+        <div class="tech-tags">
+            <span class="tech-tag">AWS Lambda</span>
+            <span class="tech-tag">DynamoDB</span>
+            <span class="tech-tag">Amazon S3</span>
+            <span class="tech-tag">SNS</span>
+            <span class="tech-tag">CloudWatch</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">Python 3.11</span>
+            <span class="tech-tag">Event-Driven</span>
+        </div>
     </div>
-    <a href="https://github.com/Ofony-85/serverless-log-pipeline" class="btn-primary">View Project →</a>
+    
+    <div class="project-stats">
+        <div class="stat-item">
+            <span class="stat-value">108</span>
+            <span class="stat-label">Logs Processed</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">2.8s</span>
+            <span class="stat-label">Processing Time</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">21</span>
+            <span class="stat-label">AWS Resources</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">$7</span>
+            <span class="stat-label">Monthly Cost</span>
+        </div>
+    </div>
+    
+    <div class="project-links">
+        <a href="https://github.com/Ofony-85/serverless-log-pipeline" class="btn-primary" target="_blank">View on GitHub →</a>
+        <a href="https://github.com/Ofony-85/serverless-log-pipeline#-architecture" class="btn-secondary" target="_blank">View Architecture →</a>
+    </div>
 </div>
+
+<style>
+/* Serverless Log Pipeline Project Card Styles - Matches Portfolio Design */
+.project-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.project-section {
+    margin-bottom: 2rem;
+}
+
+.project-section h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievements-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.achievements-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0.5rem;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    background: #667eea;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+}
+
+.project-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 8px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.25rem;
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #718096;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: #ffffff;
+    border: 2px solid #667eea;
+}
+
+.btn-primary:hover {
+    background: #5a67d8;
+    border-color: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    .project-title {
+        font-size: 1.5rem;
+    }
+    
+    .project-description {
+        font-size: 1rem;
+    }
+    
+    .project-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-tags {
+        gap: 0.5rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+</style>
     </div>
 </section>
 
